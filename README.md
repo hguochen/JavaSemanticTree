@@ -110,3 +110,13 @@ Topics:
 - Interview Prep:
     - LeetCode and HackerRank for problem-solving.
     - Practice data structures (arrays, linked lists, trees, graphs) and algorithms (sorting, searching, dynamic programming).
+
+## Study Tips
+- Daily Commitment: Spend 1-2 hours daily or 10+ hours weekly.
+- Hands-On Practice: Code every concept as you learn.
+- Iterative Learning: Revise foundational topics when diving into advanced ones.
+- Community: Join Java forums, Discord groups, or Stack Overflow for help.
+- Books and Resources:
+    - "Head First Java" (Beginner-Friendly).
+    - "Effective Java" by Joshua Bloch (Intermediate).
+    - Oracle Java Documentation (Comprehensive).
