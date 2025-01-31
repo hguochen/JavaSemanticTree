@@ -31,5 +31,35 @@ public class CharType {
         System.out.println("char Y: " + Y);
         Y++;
         System.out.println("char Y is now: " + Y);
+
+        // what is character literal?
+        // character literal in java is a single unicode character enclosed in single quotes
+
+        // escape sequences
+        char newLine = '\n';
+        char tab = '\t';
+        char singleQuote = '\'';
+        char doubleQuote = '\"';
+        char backSlash = '\\';
+        System.out.println(newLine);
+        System.out.println(tab);
+        System.out.println(singleQuote);
+        System.out.println(doubleQuote);
+        System.out.println(backSlash);
+
+        // unicode character literals
+        char greekOmega = '\u03A9'; // Ω
+        char heart = '\u2665'; // ♥
+        System.out.println(greekOmega);
+        System.out.println(heart);
+
+        // String literals
+        // string literals are specified by enclosing a sequence of characters between a pair of double quotes
+        String str1 = "hello world!";
+        String str2 = "two\nlines";
+        String str3 = "\"This in quotes\"";
+        System.out.println(str1);
+        System.out.println(str2);
+        System.out.println(str3);
     }
 }
