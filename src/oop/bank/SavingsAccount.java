@@ -24,7 +24,7 @@ public class SavingsAccount extends BankAccount {
         double balance = this.balance;
         for (int i = 1; i <= year; i++) {
             balance = balance + (balance * this.interestRate);
-            System.out.println("Balance after year " + year + " is: " + balance);
+            System.out.println("Balance after year " + i + " is: " + balance);
         }
     }
 }

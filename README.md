@@ -8,10 +8,11 @@ Goal: Understand syntax, structure, and the basic building blocks of Java.
 
 Topics:
 - Java Development Environment: Install JDK and an IDE (e.g., IntelliJ IDEA or Eclipse).
-- Hello World: Anatomy of a Java program.
 - Variables and Data Types (int, double, boolean, String).
+- Arrays
 - Basic Input/Output.
 - Comments and Naming Conventions.
+
 Practice: Solve simple problems like calculating the area of a circle or finding if a number is odd/even.
 
 ### Control Flow
@@ -57,6 +58,7 @@ Topics:
     - Iterators.
     - Exception Handling:
     - Try-Catch, Finally, and Custom Exceptions.
+    - Java Input/Output
 - Practice: Create a program to manage a to-do list or simulate a voting system.
 
 ## Branches: Advanced Java Concepts
@@ -66,11 +68,15 @@ Topics:
 - Topics:
     - Generics in Collections and Methods.
     - Streams API for data processing.
-    - Lambda Expressions and Functional Interfaces.
 - Practice: Process data from a file or implement a custom sorting algorithm using streams.
 
-### Multithreading and Concurrency
+### Lambda
+- Goal: Learn to use lambda expressions in place of typical functions  
+- Topics:
+  - Lambda Expressions and Functional Interfaces.
+- Practice: Write a Java program that sorts a list of strings in descending order using a lambda expression. Modify the program to sort the list based on string length instead of alphabetical order.
 
+### Multithreading and Concurrency
 - Goal: Write concurrent programs.
 - Topics:
     - Threads and Runnable Interface.
@@ -78,6 +84,24 @@ Topics:
     - Executor Framework.
     - CompletableFuture.
 - Practice: Write a program simulating a producer-consumer problem.
+
+### Regular Expression
+- Goal: Efficiently search, match, and manipulate text using pattern-based rules.
+- Topics:
+  - Characters classes & Ranges
+  - Predefined character classes
+  - Quantifiers
+  - Anchors
+  - Grouping & Capturing
+  - Alternation
+  - Lookaheads & Lookbehinds (Advanced Matching)
+  - Escape Sequences
+  - Practical applications
+    - Email Validation: ^[\w.-]+@[\w.-]+\.\w+$.
+    - Phone Number Validation: ^\+?\d{1,3}?[-.\s]?\(?\d+\)?[-.\s]?\d+[-.\s]?\d+$.
+    - Extracting Data from Logs: \d{4}-\d{2}-\d{2} (matches dates like "2024-03-26").
+    - Replacing Text: str.replaceAll("\\d", "X") (replaces digits with "X").
+
 
 ### Java I/O and NIO
 
