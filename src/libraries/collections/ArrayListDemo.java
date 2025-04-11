@@ -3,6 +3,8 @@ package libraries.collections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.Spliterator;
 
 public class ArrayListDemo {
     public static void main(String[] args) {
@@ -27,6 +29,29 @@ public class ArrayListDemo {
             int day = iter.next();
             System.out.println(day);
         }
+
+        // use ListIterator if you need to modify the elements in the collection
+        ListIterator<Integer> liter = days.listIterator();
+        while(liter.hasNext()) {
+            liter.set(liter.next() + 1);
+        }
+
+        System.out.println(days);
+
+        // alternatively, if you don't intend to modify the contents of the collection, you can use a for each loop
+        for(int day : days) {
+            System.out.println("day is: " + day);
+        }
+
+        Spliterator<Integer> siter = days.spliterator();
+        // estimates the number of elements left to iterate and returns the result.
+        System.out.println(siter.estimateSize());
+
+        // executes action on the next element in the iteration. return true if there's next element, false if no elements remain
+        // note: you are not allowed to modify the elements using a spliterator
+        while (siter.tryAdvance((n) -> System.out.println("in tryAdvance: " + n)));
+
+        siter.forEachRemaining((n) -> System.out.println("forEachRemaining:" + n));
 
         // removes 1 instance of obj from the invoking collection
         // returns true if element is removed, false otherwise
