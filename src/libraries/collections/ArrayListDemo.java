@@ -2,6 +2,7 @@ package libraries.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.Spliterator;
@@ -67,5 +68,28 @@ public class ArrayListDemo {
 
         days.retainAll(new ArrayList<>(Arrays.asList(2,3,4)));
         System.out.println(days);
+
+        // copy elements from one list into another list. overwrites elements in the destination list
+        // with elements from the source list at corresponding positions
+        // destination list must be at least the same size as the source list
+        // copies elements by index, replacing elements in dest.
+        ArrayList<Integer> cp = new ArrayList<>();
+        cp.add(10);
+        cp.add(20);
+        cp.add(30);
+        Collections.copy(cp, days);
+        System.out.println(cp);
+
+        ArrayList<Integer> trades = new ArrayList<>();
+        trades.add(39);
+        trades.add(38);
+        trades.add(82);
+
+        // compares elements in cp to elements in trades. returns true if the two collections contain no
+        // common elements. otherwise, returns false
+        System.out.println(Collections.disjoint(cp, trades));
+
+        // Arrays.parallelPrefix is a method used to perform a cumulative operation(like sum, product, max, etc) in parallel on an array.
+        Arrays.parallelPrefix(cp.toArray(), (a, b) -> (int)a + (int)b);
     }
 }
