@@ -1,0 +1,2 @@
+Java I/O refers to a set of APIs in java.io and java.nio packages that handle reading and writing data (input/output)
+whether it’s from files, memory, network sockets, or other sources.

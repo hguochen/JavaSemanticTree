@@ -1,8 +1,11 @@
 package libraries.collections;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 /**
  * TreeMap is a sorted map implementation that stores key-value pairs in ascending order by default
@@ -31,5 +34,9 @@ public class TreeMapDemo {
             System.out.println(me.getKey());
             System.out.println(me.getValue());
         }
+
+        List<Integer> daysList = new ArrayList<>(daysOfWeek.keySet());
+        List<Integer> wed = daysList.stream().filter(num -> num == 3).collect(Collectors.toList());
+        System.out.println(wed);
     }
 }
