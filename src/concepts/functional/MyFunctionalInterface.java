@@ -7,6 +7,7 @@ import java.io.PrintWriter;
  * This is a functional interface because it contains only 1 abstract method, even though it can contain static methods
  * and other implemented methods.
  */
+@FunctionalInterface
 public interface MyFunctionalInterface {
     public void execute();
 
