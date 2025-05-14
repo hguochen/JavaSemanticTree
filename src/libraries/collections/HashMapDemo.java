@@ -24,6 +24,13 @@ public class HashMapDemo {
         daysOfWeek.put(4, "thursday");
         daysOfWeek.put(5, "friday");
 
+        // initalize a hashmap with a static initializer block
+        Map<String, String> map = new HashMap() {{
+           put("a", "A");
+           put("b", "B");
+           put("c", "C");
+        }};
+
         // accessing elements
         String monday = daysOfWeek.get(1);
         System.out.println(monday);
