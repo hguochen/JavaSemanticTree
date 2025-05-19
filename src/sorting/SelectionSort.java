@@ -13,24 +13,25 @@ import java.util.Arrays;
  */
 public class SelectionSort {
     public static int[] selectionSort(int[] arr) {
-        if (arr.length < 2) return arr;
-        // 'i' represents the right most sorted index that's to be replaced with next smallest element picked from
-        // the unsorted section
+        if (arr == null || arr.length < 2) return arr;
+        // 'i' marks the current position where the smallest element from the unsorted section should be placed
         for (int i = 0; i < arr.length; i++) {
-            int smallest = arr[i];
-            int smallestIndex = i;
+            int minIndex = i;
             // 'j' loop traverses through the unsorted section of the array to find the smallest element
             for (int j = i+1; j < arr.length; j++) {
-                if (arr[j] < smallest) {
-                    smallest = arr[j];
-                    smallestIndex = j;
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
                 }
             }
-            int temp = arr[i];
-            arr[i] = smallest;
-            arr[smallestIndex] = temp;
+            if (i != minIndex) swap(arr, i, minIndex);
         }
         return arr;
+    }
+
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     public static void main(String[] args) {
