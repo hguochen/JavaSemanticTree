@@ -52,5 +52,13 @@ public class RandomDemo {
         List<String> colors = Arrays.asList("Red", "Green", "Blue", "Yellow");
         String pick = colors.get(rand.nextInt(colors.size()));
         System.out.println("Random pick: " + pick);
+
+        // generate a random number between 2 ranges
+        int max = 5;
+        int min = 1;
+        // inclusive range
+        System.out.println(rand.nextInt(max - min + 1) + min);
+        System.out.println(rand.nextInt(max - min + 1) + min);
+        System.out.println(rand.nextInt(max - min + 1) + min);
     }
 }
