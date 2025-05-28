@@ -16,7 +16,7 @@ class BinarySearchTree {
         this.root = new Node<>(data);
     }
 
-    public Node<Integer>getRoot() {
+    public Node<Integer> getRoot() {
         return this.root;
     }
 
