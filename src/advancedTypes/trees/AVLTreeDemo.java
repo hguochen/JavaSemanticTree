@@ -1,5 +1,6 @@
 package advancedTypes.trees;
 
+
 class AVLNode {
     public int data;
     public AVLNode left;
@@ -14,6 +15,17 @@ class AVLNode {
     }
 }
 
+/**
+ * AVLTree is a self-balancing tree that guarantees insertion, search and deletion operations run at O(logn) time
+ * complexity.
+ *
+ * The self-balancing mechanism consists of 2 operations, leftRotate & rightRotate, which rotates nodes in the heavy
+ * side of the subtree so that eventually each left and right subTree pairs has balance factors of no more than 1 and
+ * less than -1.
+ *
+ * Use AVLTress when
+ * - we need do alot more data searches than insert/deletes
+ */
 class AVLTree {
     private AVLNode root;
 
