@@ -249,6 +249,7 @@ class BTree {
         // case 2c: internal node, both children have t-1 keys
         // case 3b: node in recursion path has only t-1 keys
         // case 3a: node has only t-1 keys, but sibling has t keys
+        return -1;
     }
 }
 

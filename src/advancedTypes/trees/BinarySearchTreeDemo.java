@@ -1,5 +1,7 @@
 package advancedTypes.trees;
 
+import java.util.LinkedList;
+
 /**
  * Design a class BinarySearchTree to represent a generic Binary Search Tree (BST) with support for:
  * 	•	Insertion of values in BST order
@@ -118,6 +120,31 @@ class BinarySearchTree {
         if (node.left != null) this.postOrder(node.left);
         if (node.right != null) this.postOrder(node.right);
         System.out.println(node.data);
+    }
+
+    /**
+     * Level order traversal is essentially a Breadth first search algorithm
+     */
+    public void levelOrder() {
+        if (this.root == null) return;
+        LinkedList<Node<Integer>> queue = new LinkedList<>();
+        queue.addLast(this.root);
+
+        // print by level
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            for (int i = 0; i < levelSize; i++) {
+                Node<Integer> curr = queue.removeFirst();
+                System.out.print(curr.getData() + " ");
+                if (curr.left != null) {
+                    queue.addLast(curr.left);
+                }
+                if (curr.right != null) {
+                    queue.addLast(curr.right);
+                }
+            }
+            System.out.println();
+        }
     }
 
     /**
@@ -274,5 +301,7 @@ public class BinarySearchTreeDemo {
         System.out.println("-----");
         tree.delete(7);
         tree.inOrder(root);
+        System.out.println("-----");
+        tree.levelOrder();
     }
 }
