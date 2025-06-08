@@ -31,6 +31,12 @@ public class PriorityQueueDemo {
         queue.add(2);
         queue.add(10);
         queue.add(25);
+        // What's the difference between offer and add methods?
+        // - both insert elements into the queue
+        // - on failure:
+        //      - .add throws an exception, IllegalStateException if capacity exceeded
+        //      - .offer failures gracefully by returning false
+        queue.offer(40);
 
         // if you want to create a max-heap priority queue, use a custom comparator to reverse the natural ordering
         PriorityQueue<Integer> queue2 = new PriorityQueue<>(Comparator.reverseOrder());
