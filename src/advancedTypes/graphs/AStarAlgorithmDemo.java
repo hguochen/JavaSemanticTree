@@ -89,21 +89,31 @@ public class AStarAlgorithmDemo {
         PriorityQueue<AStarNode> pQueue = new PriorityQueue<>();
         pQueue.offer(new AStarNode(start, heuristic(start, goal, coordinates)));
 
-        // cost of getting to element node from start node
+        // cost of getting from start node to index node
+        // every other node distance is unknown, therefore infinity value, start cost to itself is 0
         int[] gScore = new int[graph.getVerticeCount()];
         Arrays.fill(gScore, Integer.MAX_VALUE);
         gScore[start] = 0;
 
+        // keep tracks how the (key) node is reached from the (value) parent
+        // key(node): value(parent where node came from)
         Map<Integer, Integer> cameFrom = new HashMap<>();
 
         while (!pQueue.isEmpty()) {
             AStarNode curr = pQueue.poll();
+            // we have reached the goal node, reconstruct the path to see how to get to goal node
             if (curr.id == goal) {
                 return reconstructPath(cameFrom, curr.id);
             }
 
             for (WeightedEdge neighbor : graph.getNeighbors(curr.id)) {
+                // tentativeScore: the distance so far from starting node AND this distance to this neighbor
                 int tentativeScore = gScore[curr.id] + neighbor.weight;
+                // when distance to this neighbor is shorter than any other distance to this neighbor found so far
+                // - we update the parent table to track that current node has a shorter distance to this neighbor
+                // - we update the shorter distance found so far to this neighbor
+                // - we calculate the h(n) score and the tentativeScore, along with the node to be added into
+                // priorityqueue for future visits
                 if (tentativeScore < gScore[neighbor.to]) {
                     // set the parent where this neighbor node came from
                     cameFrom.put(neighbor.to, curr.id);
