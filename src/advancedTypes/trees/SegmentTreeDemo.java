@@ -9,6 +9,8 @@ import java.util.List;
  * - Sum Tree: for range sum queries
  * - Min Tree: for range minimum queries
  * - Max Tree: for range maximum queries
+ *
+ * reference: https://www.youtube.com/watch?v=2bSS8rtFym4&ab_channel=Techdose
  */
 class SegmentTree {
     private int[] sumTree;
