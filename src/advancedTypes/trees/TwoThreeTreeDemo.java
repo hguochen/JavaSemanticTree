@@ -108,9 +108,12 @@ class TwoThreeTree {
     }
 
     /**
-     * When inserting, recursion returns either:
-     * - no split, just a modified subtree OR
-     * - a split result: "promoted key + two children" that must be inserted into the parent
+     * Insert goes to a leaf.
+     * If leaf is a 2-node, insert in place.
+     * If leaf is a 3-node, split into two 2-nodes and promote middle key.
+     * Parent absorbs if it's a 2-node; otherwise parent splits too.
+     * This may cascade to root, where we create a new root.
+     * Leaf depth never changes, so it stays balanced.
      * @param x
      */
     public void insert(int x) {
