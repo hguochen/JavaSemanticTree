@@ -90,7 +90,7 @@ class TwoThreeTree {
         this.root = new TwoThreeNode(key);
     }
 
-    public boolean contains(int x) {
+    public boolean search(int x) {
         return this.containsRecursive(this.root, x);
     }
 
@@ -347,6 +347,7 @@ class TwoThreeTree {
                 queue.addLast(new LevelOrderTracker(node.right, level + 1));
             }
         }
+        System.out.println();
     }
 
     /**
@@ -427,5 +428,15 @@ public class TwoThreeTreeDemo {
         tree.validate();
         tree.inOrderTraversal();
         tree.printLevelOrder();
+        System.out.println(tree.search(50));
+        System.out.println(tree.search(60));
+        System.out.println(tree.search(70));
+        System.out.println(tree.search(40));
+        System.out.println(tree.search(30));
+        System.out.println(tree.search(20));
+        System.out.println(tree.search(10));
+        System.out.println(tree.search(80));
+        System.out.println(tree.search(90));
+        System.out.println(tree.search(100));
     }
 }
