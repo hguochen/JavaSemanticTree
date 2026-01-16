@@ -1,7 +1,5 @@
 package oop;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-
 /**
  * Java also allows constructor overloading. Which constructor is being used depends on the parameter declarations
  */
